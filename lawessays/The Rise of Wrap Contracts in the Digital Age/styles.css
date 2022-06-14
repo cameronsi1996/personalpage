@@ -4,7 +4,7 @@ body {
     rgba(80, 126, 125, 0.425),
     rgba(231, 217, 219, 0.829)
   );
-  width: 100%;
+  width: 100vw;
 }
 
 
@@ -157,7 +157,7 @@ li.navbarli, .navbara {
 }
 
 #law-essay {
-  width: 100vw;
+  width: 80vw;
   padding: 50px 110px;
   margin-top: 50px;
   margin-left: auto;
@@ -174,7 +174,7 @@ li.navbarli, .navbara {
 } 
 
 .contentpage {
-  margin-left: 10vw;
+  margin-left: 5vw;
   text-decoration: underline;
 
 }
@@ -182,7 +182,7 @@ li.navbarli, .navbara {
 table {
   border: 2px solid black;
   width: 70vw;
-  margin-left: 10vw;
+  margin-left: 5vw;
 }
 
 .center {
