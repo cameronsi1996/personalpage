@@ -209,3 +209,10 @@ li.footerli {
   color: rgb(20, 37, 10);
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  li.footerli {
+    font-size: 10px;
+    color: rgb(3, 15, 47);
+  }
+}
