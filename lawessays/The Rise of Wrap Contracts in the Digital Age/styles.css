@@ -22,16 +22,19 @@ nav {
   z-index: 5;
 }
 
-ul {
+nav > ul {
+  position: relative;
+  right: 12%;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 li.navbarli, .navbara {
   font: 15px 'Poppins', sans-serif;
   color: white;
   list-style: none;
-  padding-right: 40px;
+  padding-right: 30px;
   text-decoration: none;
 }
 
@@ -169,6 +172,35 @@ li.navbarli, .navbara {
 .essay-one::before, .essay-one::after {
   content: '"'
 } 
+
+.contentpage {
+  margin-left: 10vw;
+  text-decoration: underline;
+
+}
+
+table {
+  border: 2px solid black;
+  width: 70vw;
+  margin-left: 10vw;
+}
+
+.center {
+  text-align: center;
+}
+
+td {
+  height: 1.5em;
+  padding: 2%;
+  margin: 0;
+  border: 1px solid black;
+  min-width: 35px;
+}
+
+.tableul {
+  display: block;
+  font-size: 0.85em;
+}
 
  /* Font Definitions */
  @font-face
