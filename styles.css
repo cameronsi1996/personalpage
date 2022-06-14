@@ -187,6 +187,30 @@ li.navbarli, .navbara {
   }
 }
 
+#law-essays{
+  width: 100vw;
+  padding: 30px 0 30px 0;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 5px solid rgb(114, 97, 153);
+  background: linear-gradient(
+    grey,
+    rgb(197, 214, 236) 20%
+  )
+}
+
+.law-essays-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+img {
+  border: 1px solid grey;
+}
+
 #projects {
   width: 100vw;
   padding: 30px 0 30px 0;
@@ -198,6 +222,16 @@ li.navbarli, .navbara {
     grey,
     rgb(197, 214, 236) 20%
   )
+}
+
+h1 {
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  text-decoration: underline;
+  color:#161b35
 }
 
 iframe {
@@ -212,7 +246,7 @@ iframe {
   flex-wrap: wrap;
 }
 
-img {
+.fleximg {
   width: 400px;
   height: 300px;
 }
