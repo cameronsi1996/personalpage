@@ -243,8 +243,13 @@ li.footerli {
   text-align: center;
 }
 
+.footera {
+  font-size: 15px;
+  display: block;
+}
+
 @media (max-width: 760px) {
-  li.footerli {
+  li.footerli, .footera {
     font-size: 10px;
     color: rgb(3, 15, 47);
   }
