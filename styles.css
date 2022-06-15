@@ -251,6 +251,32 @@ iframe {
   height: 300px;
 }
 
+#backtotop {
+  z-index: 1;
+  position: fixed;
+  bottom: 11vh;
+  right: 5vw;
+  border: 2px solid rgb(62, 62, 143);
+  border-radius: 40%;
+  width: 70px;
+  height: 50px;
+  background-color:#161b3583;
+  animation: threeDSpinning 10s ease-in-out infinite;
+}
+
+#backtotop > a {
+  color: rgb(236, 220, 220);
+  text-decoration: none;
+  font: small-caps bold 13px Verdana, sans-serif ;
+}
+
+@keyframes threeDSpinning {
+  0% {transform: rotateY(0deg);}
+  50% {transform: rotateY(180deg);}
+  100% {transform: rotateY(360deg);}
+}
+
+
 footer{
   width:100vw;
   height: 90px;
