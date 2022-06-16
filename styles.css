@@ -4,35 +4,45 @@ body {
     rgba(80, 126, 125, 0.425),
     rgba(231, 217, 219, 0.829)
   );
-  width: 100%;
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
 }
 
 
 nav {
-  width: 100vw;
+  width: 100%;
   height: 100px;
   margin: 0;
   padding: 0;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   background-color: #be3144;
-  display: flex;
-  justify-content: flex-end;
   z-index: 5;
 }
 
 ul {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 20%;
 }
 
 li.navbarli, .navbara {
   font: 30px 'Poppins', sans-serif;
   color: white;
   list-style: none;
-  padding-right: 40px;
+  padding-right: 15px;
   text-decoration: none;
+}
+
+.half-empty {
+  height: 75px;
 }
 
 .empty {
@@ -188,7 +198,7 @@ li.navbarli, .navbara {
 }
 
 #law-essays{
-  width: 100vw;
+  width: 100%;
   padding: 30px 0 30px 0;
   margin-top: 50px;
   margin-left: auto;
@@ -202,9 +212,23 @@ li.navbarli, .navbara {
 
 .law-essays-div {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-content: center;
   flex-wrap: wrap;
+}
+
+.lawimgcaption {
+  padding: 10px 30px;
+  position: relative;
+  left: -50%;
+  top: -55%;
+  z-index: 1;
+  text-align: center;
+  border: 0.5px solid rgb(26, 43, 28);
+  background-color: rgba(128, 128, 128, 0.705);
+  font: Bold 12px Verdana, Times;
+  color: rgb(0, 0, 0)
 }
 
 img {
@@ -213,7 +237,7 @@ img {
 
 #projects {
   width: 100vw;
-  padding: 30px 0 30px 0;
+  padding: 30px 0;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -236,14 +260,32 @@ h1 {
 
 iframe {
   margin: 20px;
-
 }
 
 .project-tile {
   display: flex;
+  height: auto;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.flex-fig {
+  width: 405px;
+}
+
+.imgdescription {
+  padding: 5px 105px;
+  margin: 0;
+  position: relative;
+  left: 0;
+  top: -2px;
+  border: 0px;
+  z-index: 1;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  font:  12px Verdana, Times;
+  color: rgb(255, 255, 255)
 }
 
 .fleximg {
@@ -278,34 +320,48 @@ iframe {
 }
 
 
+
 footer{
   width:100vw;
-  height: 90px;
-  margin-top: 20px;
+  height: 8vh;
+  margin: 0;
   background-color: rgb(197, 175, 175);
- 
+  position: absolute;
+  bottom: 0;
 }
 
 .footerul {
-  margin: 0;
-  padding-top: 10px;
+  margin: auto;
+  padding: 0 ;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 li.footerli {
   padding: 0;
   list-style: none;
-  font-size: 20px;
+  font: 18px Times, sans-serif;
   color: white;
   text-align: center;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   * {
-    color:green !important;
+    color:green;
+  }
+
+  li.navbarli, .navbara {
+    font: 15px 'Poppins', sans-serif;
+    padding-right: 10px;
+  }
+
+  li.footerli {
+    font: 10px Times, sans-serif;
   }
 }
