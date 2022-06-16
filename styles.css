@@ -218,17 +218,23 @@ li.navbarli, .navbara {
   flex-wrap: wrap;
 }
 
+.imga:visited {
+  color: blue;
+}
+.lawimgcaption:hover {
+  background-color: yellow;
+}
+
 .lawimgcaption {
-  padding: 10px 30px;
+  padding: 10px;
   position: relative;
   left: -50%;
   top: -55%;
   z-index: 1;
   text-align: center;
-  border: 0.5px solid rgb(26, 43, 28);
-  background-color: rgba(128, 128, 128, 0.705);
+  border: 5px solid rgba(128, 128, 128, 0.705);
+  background-color: rgba(128, 128, 128, 0.935);
   font: Bold 12px Verdana, Times;
-  color: rgb(0, 0, 0)
 }
 
 img {
