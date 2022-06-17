@@ -21,6 +21,19 @@
     <section id="welcome-section">
       <h1>Hi, this is Cameron, <span class="weird hover">"WASSUP DOC" !</span></h1>
       <p>I wonder what I can do for you today? Feel free to check out this page!</p>
+      <p id="date"></p>
+
+      <script>
+        // get a new date (locale machine date time)
+        var date = new Date();
+       // get the date as a string
+        var n = date.toDateString();
+       // get the time as a string
+        var time = date.toLocaleTimeString();
+
+        document.getElementById("date").innerHTML = ('date:', n) + " " + ('time:',time);
+      </script>
+
     </section>
 
     <section id="ferris-wheel">

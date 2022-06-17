@@ -72,6 +72,16 @@ li.navbarli, .navbara {
   cursor: not-allowed;
 }
 
+#date {
+  font: bold 18px monospace, sans-serif;
+  color: green;
+  background: radial-gradient(
+    rgb(243, 243, 243),
+    rgb(221, 144, 2)
+  );
+  padding: 0 10px;
+}
+
 #ferris-wheel {
   width:100vw;
   height: 350px;
