@@ -215,6 +215,16 @@ h3 {
   font-size: 15px;
 }
 
+h4 {
+  padding-left: 10%;
+  font-size: 15px;
+}
+
+.highlight-bold {
+  background-color: yellow;
+  font-weight: bold
+}
+
 code {
   background-color: var(--code-background);
 }
