@@ -212,6 +212,7 @@ td {
 
 h3 {
   padding-left: 5%;
+  padding-top: 2%;
   font-size: 15px;
 }
 
@@ -230,7 +231,7 @@ code {
 }
 
 .contentp {
-  font-size: 15px;
+  font-size: 14px;
   padding-left: 7%;
 }
 
