@@ -207,7 +207,7 @@ li.navbarli, .navbara {
   }
 }
 
-#law-essays{
+#law-essays, #codingBootcampNotes{
   width: 100%;
   padding: 30px 0 30px 0;
   margin-top: 50px;
@@ -220,7 +220,7 @@ li.navbarli, .navbara {
   )
 }
 
-.law-essays-div {
+.section-div {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -235,7 +235,7 @@ li.navbarli, .navbara {
   background-color: yellow;
 }
 
-.lawimgcaption {
+.sectioncaption {
   padding: 10px;
   position: relative;
   left: -50%;
