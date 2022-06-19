@@ -57,22 +57,31 @@
           
         <div class="empty"></div>
           
-      <div id="operators">
+      <section id="operators">
         <h2>Operators</h2>
-        <h3>Equality (<code>==</code>)</h3>
-        <p class="contentp"><code>==</code> can be used to check whether two operands (i.e. values in a function) are equal, and Boolean results (i.e. True / False) will be produced.</p>
-        <p class="contentp">Strings will be converted into numbers when compared with numbers.</p>
-      </div>
+        <div>
+          <h3>1. Equality (<code>==</code>)</h3>
+          <p class="contentp"><code>==</code> can be used to check whether two operands (i.e. values in a function) are equal, and Boolean results (i.e. True / False) will be produced.</p>
+          <p class="contentp">Strings will be converted into numbers when compared with numbers.</p>
+        </div>
+
+        <div>
+          <h3>2. Strict Equality (<code>===</code>)</h3>
+          <p class="contentp"><code>===</code> compares two operands strictly, taking account of the different type of values, then produces Boolean results accordingly.</p>
+          <p class="contentp">E.g. Strings are distinguished from numbers, hence "false" in results.</p>
+        </div>
+      </section>
     
       <div class="empty"></div>
     
-      <div id="functions">
+      <section id="functions">
         <h2>Functions</h2>
         <h3>Examples of Application in HTML</h3>
         <p class="contentp"><code>&lt;html&gt;<br />
           &nbsp;&lt;body&gt;<br />
             &nbsp;&nbsp;&lt;p&gt;First Example: &lt;span id="demo1"&gt;&lt;/span&gt;&lt;/p&gt;<br />
             &nbsp;&nbsp;&lt;p&gt;Second Example: &lt;span id="demo2"&gt;&lt;/span&gt;&lt;/p&gt;<br />
+            &nbsp;&nbsp;&lt;p&gt;Third Example: &lt;span id="demo3"&gt;&lt;/span&gt;&lt;/p&gt;<br />
             <br />
           &nbsp;&lt;script&gt;<br />
             &nbsp;&nbsp;let g = functionExample(2, 1, 3);<br />
@@ -90,9 +99,22 @@
             <br />
             &nbsp;&nbsp;function functionExample2(a, b) {<br />
               &nbsp;&nbsp;&nbsp;&nbsp;if (a == b) {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Both values are equal or true" + " because y = " + y;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Both values are equal or true because y = " + y;<br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Both values are not equal";<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            &nbsp;&lt;/script&gt;<br />
+          <br />
+          &nbsp;&lt;script&gt;<br />
+            &nbsp;&nbsp;w = [2, "'2'"];<br />
+            &nbsp;&nbsp;z = functionExample2(w[0], w[1]);<br />
+            &nbsp;&nbsp;document.getElementById("demo3").innerHTML = z;<br />
+            <br />
+            &nbsp;&nbsp;function functionExample2(a, b) {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;if (a === b) {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Both values are equal or true because w = " + w;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Both values are NOT equal because w = " + w;<br />
                 &nbsp;&nbsp;&nbsp;&nbsp;}<br />
             &nbsp;&lt;/script&gt;<br />
           <br />
@@ -104,6 +126,7 @@
             <h4>Results</h4>
             <p class="contentp">First Example: <span id="demo1" class="highlight-bold"></span></p>
             <p class="contentp">Second Example: <span id="demo2" class="highlight-bold"></span></p>
+            <p class="contentp">Third Example: <span id="demo3" class="highlight-bold"></span></p>
 
             <script>
               let g = functionExample(2, 1, 3);
@@ -120,13 +143,26 @@
 
               function functionExample2(a, b) {
                 if (a == b) {
-                  return "Both values are equal or true" + " because y = " + y;
+                  return "Both values are equal or true because y = " + y;
                   }
                   return "Both values are not equal";
                 }
             </script>
+
+            <script>
+              let w = [2, "'2'"];
+              let z = functionExample2(w[0], w[1]);
+              document.getElementById("demo3").innerHTML = z;
+
+              function functionExample2(a, b) {
+                if (a === b) {
+                  return "Both values are equal or true because w = " + w;
+                  }
+                  return "Both values are NOT equal because w = " + w;
+                }
+            </script>
           </div>
-      </div>
+        </section>
 
     </section>
 
