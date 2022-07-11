@@ -207,7 +207,7 @@ li.navbarli, .navbara {
   }
 }
 
-#law-essays, #codingBootcampNotes{
+#law-essays, #codingBootcampNotes, #codingProjects{
   width: 100%;
   padding: 30px 0 30px 0;
   margin-top: 50px;
@@ -244,6 +244,18 @@ li.navbarli, .navbara {
   text-align: center;
   border: 5px solid rgba(128, 128, 128, 0.705);
   background-color: rgba(128, 128, 128, 0.935);
+  font: Bold 12px Verdana, Times;
+}
+
+.sectioncaption2 {
+  padding: 10px;
+  position: relative;
+  left: -50%;
+  top: -55%;
+  z-index: 1;
+  text-align: center;
+  border: 5px solid rgba(255, 94, 0, 0.705);
+  background-color: rgba(246, 164, 0, 0.935);
   font: Bold 12px Verdana, Times;
 }
 

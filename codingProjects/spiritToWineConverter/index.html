@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cameron Si cameronsi1996 Javascript Notes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/">Home</a></li>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/#projects">VideoFlexShow</a></li>
+        <li class="navbarli"><a class="navbara" href="#contact">Contact</a></li>
+        <li class="navbarli"><a class="navbara" href="#ferris-wheel"><i>Top</i></a></li>
+      </ul>
+    </nav>
+
+    <div class="empty"></div>
+
+    <section id="ferris-wheel">
+      <div class="ferris-wheel">
+        <div class="wheelandcabin">
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="cabin c1"></div>
+          <div class="cabin c2"></div>
+          <div class="cabin c3"></div>
+          <div class="cabin c4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="body">
+      <div>
+        <h1 id="title">Spirit to Wine Converter</h1>
+        <p id="titleP">Spirit drinks, such as whiskey, cognac, etc. are often above 40% alcohol, thus often render it difficult for us to taste the concealed
+          flavors of your fine drink <i>(unless you're lucky enough to savour the legendary Macallan 25)</i>. <b>"Thou shalt not squander",</b> but savour thy booze to the
+          fullest and appreciate the layers within!</p> 
+        <p id="titleP"> This tool will help to 
+          dilute your spirit down to a lower percentage like red wine (<i>14.5%</i>). Just enter the initial alcohol
+        percentage of the spirit you intend to dilute, the desired alcohol percentage, and the intended final volume (<i>eg. 150ml per glass</i>).</p>
+      </div>
+
+      <div>
+        <form id="form1">
+          <label class="mediumFonts">Please enter (in numbers only):</label>
+          <input id="initialAlcohol" class="smallFonts" type="number" placeholder="Initial Alcohol Percentage in %"> 
+          <input id="intendedAlcohol" class="smallFonts" type="number" placeholder="Intended Alchol Percentage in %"> 
+          <input id="intendedVol" class="smallFonts" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
+          <button id="form1Button" type="button" onclick="calculate()">Calculate</button>
+          <p class="mediumFonts">Amount of Spirit to add (in ml):</p>
+          <p id="spirit"></p>
+          <p class="mediumFonts">Amount of Water or other non-alcoholic drink to add (in ml):</p>
+          <p id="water"></p>
+
+          <div id="enjoyBannerDiv">
+          <h2 id="enjoyBanner"></h2>
+          </div>
+        </form>
+      </div>
+      
+      <script>       
+        function calculate() {
+          let initialAlcohol = document.getElementById("initialAlcohol").value;
+          let intendedAlcohol = document.getElementById("intendedAlcohol").value;
+          let intendedVol = document.getElementById("intendedVol").value;
+          
+          if (initialAlcohol < intendedAlcohol) { 
+            document.getElementById("spirit").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>"; 
+            document.getElementById("water").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>";
+            
+            return document.getElementById("enjoyBanner").innerHTML = "Please Try Again!!!"
+          } else {
+            let spirit = (intendedVol * (intendedAlcohol / 100)) / (initialAlcohol / 100);
+            let water = intendedVol - spirit;
+
+            document.getElementById("spirit").innerHTML = spirit + "ml"; 
+            document.getElementById("water").innerHTML = water + "ml";
+
+            return document.getElementById("enjoyBanner").innerHTML = "ENJOY!!!"
+          }
+        } 
+      </script>
+
+    </section>
+    
+
+    <div>
+    <button type="button" id="backtotop"><a href="#ferris-wheel">Back to Top</a></button>
+    </div>
+  
+    <footer id="contact">
+      <ul class="footerul">
+        <li class="footerli">This marks the first certificate from freeCodeCamp.</li>
+        <li class="footerli">Profile: <a class="footera" href="https://www.linkedin.com/in/cameronsi/">https://www.linkedin.com/in/cameronsi/</a></li>
+        <li class="footerli">June 2022</li> 
+      </ul>
+    </footer>
+  </body>
+</html>
+
+
