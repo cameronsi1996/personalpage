@@ -65,25 +65,36 @@
       
       <script>       
         function calculate() {
-          let initialAlcohol = document.getElementById("initialAlcohol").value;
-          let intendedAlcohol = document.getElementById("intendedAlcohol").value;
-          let intendedVol = document.getElementById("intendedVol").value;
-          
-          if (initialAlcohol < intendedAlcohol) { 
-            document.getElementById("spirit").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>"; 
-            document.getElementById("water").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>";
+          let initialAlcohol = Number(document.getElementById("initialAlcohol").value);
+          let intendedAlcohol = Number(document.getElementById("intendedAlcohol").value);
+          let intendedVol = Number(document.getElementById("intendedVol").value);
+         
+          let spirit = (intendedVol * intendedAlcohol / 100) / (initialAlcohol / 100);
+          let water = intendedVol - spirit;
             
-            return document.getElementById("enjoyBanner").innerHTML = "Please Try Again!!!"
-          } else {
-            let spirit = (intendedVol * (intendedAlcohol / 100)) / (initialAlcohol / 100);
-            let water = intendedVol - spirit;
+        
 
-            document.getElementById("spirit").innerHTML = spirit + "ml"; 
-            document.getElementById("water").innerHTML = water + "ml";
+          if (initialAlcohol < intendedAlcohol) {  
+              
+              return (
+              document.getElementById("spirit").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>", 
+              document.getElementById("water").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>",
+            
+              document.getElementById("enjoyBanner").innerHTML = "Please Try Again!!!"
+            )
+            
+          } else {  
+            
+            return (
+              document.getElementById("spirit").innerHTML = spirit + "ml", 
+              document.getElementById("water").innerHTML = water + "ml",
 
-            return document.getElementById("enjoyBanner").innerHTML = "ENJOY!!!"
-          }
-        } 
+              document.getElementById("enjoyBanner").innerHTML = "ENJOY!!!"
+            )
+              
+          }  
+        }  
+        
       </script>
 
     </section>
