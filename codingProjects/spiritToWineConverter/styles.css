@@ -257,9 +257,8 @@ input {
 }
 
 footer {
+  height: 60px;
   border-top: 1px solid grey;
-  position: absolute;
-  bottom: 0.5%;
   background-color: aliceblue;
 }
 
@@ -277,7 +276,7 @@ footer {
 li.footerli {
   padding: 0;
   list-style: none;
-  font-size: 20px;
+  font-size: 15px;
   color: rgb(20, 37, 10);
   text-align: center;
 }
@@ -288,10 +287,6 @@ li.footerli {
 }
 
 @media (max-width: 760px) {
-  footer {
-    position: fixed;
-    bottom: 0px;
-  }
   li.footerli, .footera {
     font-size: 10px;
     color: rgb(3, 15, 47);
