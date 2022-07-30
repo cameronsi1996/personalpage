@@ -48,12 +48,24 @@
         percentage of the spirit you intend to dilute, the desired alcohol percentage, and the intended final volume (<i>eg. 150ml per glass</i>).</p>
       </div>
 
-      <div>
+      <div class="center">
         <form id="form1">
           <label class="mediumFonts">Please enter (in numbers only):</label>
-          <input id="initialAlcohol" class="smallFonts" type="number" placeholder="Initial Alcohol Percentage in %"> 
-          <input id="intendedAlcohol" class="smallFonts" type="number" placeholder="Intended Alchol Percentage in %"> 
-          <input id="intendedVol" class="smallFonts" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
+          <div class="row">
+            <div class="col-md-4">
+            <input id="initialAlcohol" class="smallFonts" type="number" placeholder="Initial Alcohol Percentage in %"> 
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+              <input id="intendedAlcohol" class="smallFonts" type="number" placeholder="Intended Alchol Percentage in %"> 
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+            <input id="intendedVol" class="smallFonts" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
+            </div>
+          </div>
           <button id="form1Button" type="button" onclick="calculate()">Calculate</button>
           <p class="mediumFonts">Amount of Spirit to add (in ml):</p>
           <p id="spirit"></p>
@@ -61,7 +73,7 @@
           <p id="water"></p>
 
           <div id="enjoyBannerDiv">
-          <h2 id="enjoyBanner"></h2>
+            <h2 id="enjoyBanner"></h2>
           </div>
         </form>
       </div>
