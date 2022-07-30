@@ -231,7 +231,7 @@ li.navbarli, .navbara {
 .imga:visited {
   color: blue;
 }
-.sectioncaption:hover {
+.sectioncaption:hover, .sectioncaption2:hover, .imgcaption:hover {
   background-color: yellow;
 }
 
