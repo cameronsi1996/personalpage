@@ -99,6 +99,14 @@
               document.getElementById("enjoyBanner").innerHTML = 'Please Try Again!!! <i class="fa-solid fa-triangle-exclamation"></i>'
             )
             
+          } else if (initialAlcohol == 0 && intendedAlcohol == 0) {
+
+              return (
+              document.getElementById("spirit").innerHTML = "<i><span style='color: red;'>Error - Please provide a percentage(%)</span></i>", 
+              document.getElementById("water").innerHTML = "<i><span style='color: red;'>Error - Please provide a percentage(%)</span></i>",
+            
+              document.getElementById("enjoyBanner").innerHTML = 'Please Try Again!!! <i class="fa-solid fa-triangle-exclamation"></i>'
+              )
           } else {  
             
             return (
