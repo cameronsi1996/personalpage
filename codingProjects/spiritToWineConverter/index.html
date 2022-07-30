@@ -53,21 +53,21 @@
         <form id="form1">
           <label class="mediumFonts">Please enter (in numbers only):</label>
           <div class="row">
-            <div class="col-md-4">
-            <input id="initialAlcohol" class="smallFonts" type="number" placeholder="Initial Alcohol Percentage in %"> 
+            <div class="col-md-12">
+            <input id="initialAlcohol" class="form-control input-sm" type="number" placeholder="Initial Alcohol Percentage in %"> 
             </div>
           </div>
           <div class="row">
-              <div class="col-md-4">
-              <input id="intendedAlcohol" class="smallFonts" type="number" placeholder="Intended Alchol Percentage in %"> 
+              <div class="col-md-12">
+              <input id="intendedAlcohol" class="form-control input-sm" type="number" placeholder="Intended Alchol Percentage in %"> 
               </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
-            <input id="intendedVol" class="smallFonts" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
+            <div class="col-md-12">
+            <input id="intendedVol" class="form-control input-sm" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
             </div>
           </div>
-          <button id="form1Button" type="button" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
+          <button id="form1Button" type="button" class="btn btn-info btn-lg" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
           <p class="mediumFonts">Amount of Spirit to add (in ml):</p>
           <p id="spirit"></p>
           <p class="mediumFonts">Amount of Water or other non-alcoholic drink to add (in ml):</p>
