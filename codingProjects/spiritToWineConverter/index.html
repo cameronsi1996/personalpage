@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/cc04e249b3.js" crossorigin="anonymous"></script>
     <link rel="icon" href="webpageIconMini.png">
   </head>
 
@@ -66,7 +67,7 @@
             <input id="intendedVol" class="smallFonts" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
             </div>
           </div>
-          <button id="form1Button" type="button" onclick="calculate()">Calculate</button>
+          <button id="form1Button" type="button" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
           <p class="mediumFonts">Amount of Spirit to add (in ml):</p>
           <p id="spirit"></p>
           <p class="mediumFonts">Amount of Water or other non-alcoholic drink to add (in ml):</p>
@@ -95,7 +96,7 @@
               document.getElementById("spirit").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>", 
               document.getElementById("water").innerHTML = "<i><span style='color: red;'>Error - Initial alcohol must be higher than intended alcohol percentage</span></i>",
             
-              document.getElementById("enjoyBanner").innerHTML = "Please Try Again!!!"
+              document.getElementById("enjoyBanner").innerHTML = 'Please Try Again!!! <i class="fa-solid fa-triangle-exclamation"></i>'
             )
             
           } else {  
@@ -104,7 +105,7 @@
               document.getElementById("spirit").innerHTML = spirit + "ml", 
               document.getElementById("water").innerHTML = water + "ml",
 
-              document.getElementById("enjoyBanner").innerHTML = "ENJOY!!!"
+              document.getElementById("enjoyBanner").innerHTML = 'ENJOY!!! <i class="fa-regular fa-face-laugh-wink"></i>'
             )
               
           }  
