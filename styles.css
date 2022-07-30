@@ -318,7 +318,7 @@ iframe {
 }
 
 .imgdescription {
-  padding: 5px 105px;
+  padding: 5px 96px;
   margin: 0;
   position: relative;
   left: 0;
@@ -366,7 +366,7 @@ iframe {
 
 footer{
   width:100vw;
-  height: 8vh;
+  height: 10vh;
   margin: 0;
   background-color: rgb(197, 175, 175);
   position: absolute;
