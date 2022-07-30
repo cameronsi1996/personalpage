@@ -261,6 +261,21 @@ li.navbarli, .navbara {
 
 img {
   border: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+}
+
+.imgcaption {
+  width: 30%;
+  padding: 10px;
+  position: relative;
+  left: 30%;
+  top: -55%;
+  z-index: 1;
+  text-align: center;
+  border: 5px solid rgba(128, 128, 128, 0.705);
+  background-color: rgba(128, 128, 128, 0.935);
+  font: Bold 12px Verdana, Times;
 }
 
 #projects {
