@@ -209,6 +209,22 @@ li.navbarli, .navbara {
   color: rgb(129, 129, 129);
 }*/
 
+button:hover {
+  animation: bounceWithDistortion 2s ease infinite;
+}
+
+.bouncy {
+  animation: bounceWithDistortion 2s ease;
+}
+
+@keyframes bounceWithDistortion {
+  0%   { transform: scale(1,1)    translateY(0); }
+  10%  { transform: scale(1.1,.9) translateY(0); }
+  30%  { transform: scale(.9,1.1) translateY(-25px); }
+  50%  { transform: scale(1,1)    translateY(0); }
+  100% { transform: scale(1,1)    translateY(0); }
+}
+
 #form1Button {
   margin: 20px;
   font-size: 0.9rem;
