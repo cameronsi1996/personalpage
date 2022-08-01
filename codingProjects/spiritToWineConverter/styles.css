@@ -190,6 +190,13 @@ li.navbarli, .navbara {
   width: 410px;
 }
 
+.well {
+  width: 450px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 3%;
+  padding: 10px 20px;
+}
+
 .mediumFonts {
   font-size: 0.9rem;
 }

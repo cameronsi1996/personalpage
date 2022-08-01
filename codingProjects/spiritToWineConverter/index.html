@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <!-- link bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- link font -->
     <script src="https://kit.fontawesome.com/cc04e249b3.js" crossorigin="anonymous"></script>
     <link rel="icon" href="webpageIconMini.png">
   </head>
@@ -49,30 +51,32 @@
         percentage of the spirit you intend to dilute, the desired alcohol percentage, and the intended final volume (<i>eg. 150ml per glass</i>).</p>
       </div>
 
-      <div class="center">
+      <div class="center ">
         <form id="form1">
-          <label class="mediumFonts">Please enter (in numbers only):</label>
-          <div class="row">
-            <div class="col-md-12">
-            <input id="initialAlcohol" class="form-control input-sm" type="number" placeholder="Initial Alcohol Percentage in %"> 
-            </div>
-          </div>
-          <div class="row">
+          <div class="well">   
+            <label class="mediumFonts">Please enter (in numbers only):</label>
+            <div class="row">
               <div class="col-md-12">
-              <input id="intendedAlcohol" class="form-control input-sm" type="number" placeholder="Intended Alchol Percentage in %"> 
+                <input id="initialAlcohol" class="form-control input-sm" type="number" placeholder="Initial Alcohol Percentage in %"> 
               </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-            <input id="intendedVol" class="form-control input-sm" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                <input id="intendedAlcohol" class="form-control input-sm" type="number" placeholder="Intended Alchol Percentage in %"> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <input id="intendedVol" class="form-control input-sm" type="number" placeholder="Intended volume (ml) of drink (eg. 150ml per glass)">
+              </div>
+            </div>
+            <button id="form1Button" type="button" class="btn btn-info btn-lg" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
           </div>
-          <button id="form1Button" type="button" class="btn btn-info btn-lg" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
+          <div class="half-empty"></div>
           <p class="mediumFonts">Amount of Spirit to add (in ml):</p>
           <p id="spirit"></p>
           <p class="mediumFonts">Amount of Water or other non-alcoholic drink to add (in ml):</p>
           <p id="water"></p>
-
           <div id="enjoyBannerDiv">
             <h2 id="enjoyBanner"></h2>
           </div>
@@ -122,8 +126,7 @@
       </script>
 
     </section>
-    
-    <div class="empty"></div>
+    <div class="half-empty"></div>
     <div class="empty"></div>
     <div class="empty"></div>
     <div class="empty"></div>

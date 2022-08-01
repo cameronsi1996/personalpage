@@ -26,11 +26,11 @@
       <p id="date"></p>
 
       <script>
-        // get a new date (locale machine date time)
+       // create a new date (locale machine date time)
         let  date = new Date();
-       // get the date as a string
+       // convert the date as a string
         let dateInString = date.toDateString();
-       // get the time as a string
+       // convert the time as a string
         let time = date.toLocaleTimeString();
 
         document.getElementById("date").innerHTML = ('date:', dateInString) + " " + ('time:', time);
