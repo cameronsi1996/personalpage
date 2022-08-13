@@ -223,7 +223,7 @@ li.navbarli, .navbara {
 .section-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
   flex-wrap: wrap;
 }
@@ -237,21 +237,15 @@ li.navbarli, .navbara {
 
 .sectioncaption {
   padding: 10px;
-  position: relative;
-  left: -50%;
-  top: -55%;
   z-index: 1;
   text-align: center;
-  border: 5px solid rgba(128, 128, 128, 0.705);
+  border: 5px solid rgba(190, 190, 190, 0.705);
   background-color: rgba(128, 128, 128, 0.935);
   font: Bold 12px Verdana, Times;
 }
 
 .sectioncaption2 {
   padding: 10px;
-  position: relative;
-  left: -50%;
-  top: -55%;
   z-index: 1;
   text-align: center;
   border: 5px solid rgba(255, 94, 0, 0.705);
@@ -269,11 +263,11 @@ img {
   width: 30%;
   padding: 10px;
   position: relative;
-  left: 30%;
+  left: 27%;
   top: -55%;
   z-index: 1;
   text-align: center;
-  border: 5px solid rgba(128, 128, 128, 0.705);
+  border: 5px solid rgba(190, 190, 190, 0.705);
   background-color: rgba(128, 128, 128, 0.935);
   font: Bold 12px Verdana, Times;
 }

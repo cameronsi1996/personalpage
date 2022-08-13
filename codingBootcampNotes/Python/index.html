@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cameron Si cameronsi1996 Python Notes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="https://kit.fontawesome.com/cc04e249b3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="webpageIconMini.png">
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/">Home</a></li>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/#projects">VideoFlexShow</a></li>
+        <li class="navbarli"><a class="navbara" href="#contact">Contact</a></li>
+        <li class="navbarli"><a class="navbara" href="#ferris-wheel"><i>Top</i></a></li>
+      </ul>
+    </nav>
+
+    <div class="empty"></div>
+
+    <section id="ferris-wheel">
+      <div class="ferris-wheel">
+        <div class="wheelandcabin">
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="cabin c1"></div>
+          <div class="cabin c2"></div>
+          <div class="cabin c3"></div>
+          <div class="cabin c4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="python-notes">
+      <div>
+        <h1>Python Notes</h1>
+                 
+        <h2 class="contentspage">Table of Contents</h2>
+                    
+          <table>
+            <thead>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#stringPermutations" class="tablea"><b>Function(1): Listing All Permutations of String</b></a></td>
+              </tr>
+              <tr>
+                <td><a href="#longestPalindrome" class="tablea"><b>Function(2): Searching for the Longest Palindrome in String <i>(case-sensitive, word matching method)</i></b></a></td>
+              </tr>
+          </table>        
+          
+        <div class="empty"></div>
+          
+      <section id="stringPermutations">
+        <h2>Listing All Permutations of String, &nbsp;<i>"for" Loop</i></h2>
+        <div>
+          <h3>Script:</h3>
+          <p class="contentp">
+            <code>
+              def listAllPermutations(string):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;permutation = []<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;for start in range(len(string)):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for end in range(start + 1, len(string) + 1):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permutation.append(string[start:end])<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;return permutation<br />
+              <br />
+              #test-function<br />
+              listAllPermutations("abcd")
+            </code>
+          </p>
+          <h3>Output:</h3>
+          <p class="contentp">['a', 'ab', 'abc', 'abcd', 'b', 'bc', 'bcd', 'c', 'cd', 'd']</p>
+        </div>
+      </section>
+    
+      <div class="half-empty"></div>
+    
+      <section id="longestPalindrome">
+        <h2>Searching for the Longest Palindrome in String <i>(case-sensitive, word matching method)</i></h2>
+        <div>
+          <h3>Script:</h3>
+          <p class="contentp">
+            <code>
+              def longestPalindrome(string):<br />
+              &nbsp; &nbsp; permutations = []<br />
+              &nbsp; &nbsp; for start in range(len(string)):<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; for end in range(start + 1, len(string) + 1):<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if len(string[start:end]) &gt; 1: &nbsp; &nbsp; &nbsp;#filters away single letters<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; permutations.append(string[start:end])<br />
+              &nbsp; &nbsp; #print(permutations)<br />
+              <br><br />
+              &nbsp; &nbsp; permutationsReversed = []<br />
+              &nbsp; &nbsp; for string in permutations:<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; permutationsReversed.append(string[::-1]) &nbsp; &nbsp;#reverse strings<br />
+              <br><br />
+              &nbsp; &nbsp; #print(permutationsReversed)<br />
+              <br><br />
+              &nbsp; &nbsp; palindromes = []<br />
+              &nbsp; &nbsp; for item in permutations:<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; for item2 in permutationsReversed:<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if item == item2:<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; palindromes.append(item)<br />
+              &nbsp; &nbsp; #print(palindromes)<br />
+              <br><br />
+              &nbsp; &nbsp; if len(palindromes) &gt; 0:<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; longestPalindrome = max(palindromes, key = len) #find longest letter in list<br />
+              <br><br />
+              &nbsp; &nbsp; &nbsp; &nbsp; #print(longestPalindrome)<br />
+              &nbsp;&nbsp;<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; return longestPalindrome + " has " + str(len(longestPalindrome)) + " words."<br />
+              <br><br />
+              &nbsp; &nbsp; else:<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; return "No palindrome found."<br />
+              &nbsp;<br />
+              <br />
+              #test-function<br />
+              longestPalindrome("This string have words like redivider, deified, civic, radar, level, rotor, kayak, reviver, racecar, madam, and refer")
+            </code>
+          </p>
+          <h3>Output:</h3>
+          <p class="contentp">'redivider has 9 words.'</p>
+        </div>
+        </section>
+      
+        <div class="half-empty"></div>
+
+    </section>
+    
+
+    <div>
+    <button type="button" id="backtotop"><a href="#ferris-wheel">Back to Top</a></button>
+    </div>
+  
+    <footer id="contact">
+      <ul class="footerul">
+        <li class="footerli">This marks the first certificate from freeCodeCamp.</li>
+        <li class="footerli"><i class="fa-solid fa-link"></i> Profile: <a class="footera" href="https://www.linkedin.com/in/cameronsi/">https://www.linkedin.com/in/cameronsi/</a></li>
+        <li class="footerli">June 2022</li> 
+      </ul>
+    </footer>
+  </body>
+</html>
+
+
