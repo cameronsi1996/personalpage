@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cameron Si cameronsi1996 Cost of Alcohol Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!-- link bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- link font -->
+    <script src="https://kit.fontawesome.com/cc04e249b3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="webpageIconMini.png">
+    <!-- link jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("button").addClass("bouncy")});
+    </script>
+  </head>
+  
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/">Home</a></li>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/#projects">VideoFlexShow</a></li>
+        <li class="navbarli"><a class="navbara" href="#contact">Contact</a></li>
+        <li class="navbarli"><a class="navbara" href="#ferris-wheel"><i>Top</i></a></li>
+      </ul>
+    </nav>
+
+    <div class="empty"></div>
+
+    <section id="ferris-wheel">
+      <div class="ferris-wheel">
+        <div class="wheelandcabin">
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="cabin c1"></div>
+          <div class="cabin c2"></div>
+          <div class="cabin c3"></div>
+          <div class="cabin c4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="body">
+      <div>
+        <h1 id="title">Cost of Alcohol Calculator</h1>
+        
+        <p id="titleP">If you are ever interested to compare the prices of different wines or alcohol, or if you 
+          are interested to know the cost breakdown of your bottle of alcohol, this tool will help to calculate 
+          and reveal the price per ml of alcohol for comparison purposes, and how much you will be paying towards 
+          the non-alcoholic content.</p>
+      </div>
+
+      <div class="center ">
+        <form id="form1">
+          <div class="well">   
+            <label class="mediumFonts">Please enter (in numbers only):</label>
+            <div class="row">
+              <div class="col-md-12">
+                <input id="cost" class="form-control input-sm" type="number" placeholder="Bottle Price ($)"> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <input id="alcoholPercentage" class="form-control input-sm" type="number" placeholder="Alchol Percentage in %"> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <input id="vol" class="form-control input-sm" type="number" placeholder="Bottle Volume in milliliters (ml)">
+              </div>
+            </div>
+            <button id="form1Button" type="button" class="btn btn-info btn-lg" onclick="alcoholPrice()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
+          </div>
+          <div class="half-empty"></div>
+          <p class="mediumFonts">Price ($) per <b><i>ml</i></b> of alcohol, for comparison <i>(the lower, the cheaper)</i>:</p>
+          <p id="costOfAlcohol"></p>
+          <p class="mediumFonts">Total Price ($) paid for non-alcoholic content</p>
+          <p id="totalcostOfOther"></p>
+          <div id="enjoyBannerDiv">
+            <h2 id="enjoyBanner"></h2>
+          </div>
+        </form>
+      </div>
+      
+      <script>       
+        function alcoholPrice() {
+
+          function roundToDec(num, dec) {
+            return +(Math.round(num + "e" + dec)  + "e-" + dec);
+          }
+
+          let cost = Number(document.getElementById("cost").value);
+          let alcoholPercentage = Number(document.getElementById("alcoholPercentage").value);
+          let vol = Number(document.getElementById("vol").value);
+         
+          let volAlcohol = vol * (alcoholPercentage / 100);
+          let costOfAlcohol = cost / volAlcohol;
+          /*console.log(costOfAlcohol);*/
+          let totalcostOfOther = cost * ((100 - alcoholPercentage) / 100);
+          /*console.log(cost);
+          console.log(alcoholPercentage);
+          console.log(totalcostOfOther);*/
+          
+          if (alcoholPercentage > 100) {
+            return (
+              document.getElementById("costOfAlcohol").innerHTML = "<i>Alcohol percentage entered incorrectly, please re-enter correct value.</i>",
+              document.getElementById("totalcostOfOther").innerHTML = "<i>Alcohol percentage entered incorrectly, please re-enter correct value.</i>",
+              document.getElementById("enjoyBanner").innerHTML = 'Please Try Again!!! <i class="fa-solid fa-triangle-exclamation"></i>'
+            )
+          } else {
+            return (
+              document.getElementById("costOfAlcohol").innerHTML = "<b>$" + roundToDec(costOfAlcohol, 2) + "</b> per ml of alcohol.",
+              document.getElementById("totalcostOfOther").innerHTML = "<b>$" + totalcostOfOther + "</b> out of $" + cost + " paid towards non-alcoholic content.",
+              document.getElementById("enjoyBanner").innerHTML = 'ENJOY!!! <i class="fa-regular fa-face-laugh-wink"></i>'
+           )
+          }
+        }  
+        
+      </script>
+
+    </section>
+    <div class="half-empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    
+    
+    <div>
+    <button type="button" id="backtotop"><a href="#ferris-wheel">Back to Top</a></button>
+    </div>
+  
+    <footer id="contact">
+      <ul class="footerul">
+        <li class="footerli">This marks the first certificate from freeCodeCamp.</li>
+        <li class="footerli"><i class="fa-solid fa-link"></i> Profile: <a class="footera" href="https://www.linkedin.com/in/cameronsi/">https://www.linkedin.com/in/cameronsi/</a></li>
+        <li class="footerli">June 2022</li> 
+      </ul>
+    </footer>
+  </body>
+</html>
+
+
