@@ -180,13 +180,29 @@ li.navbarli, .navbara {
   
 }
 
-#A\'nB\' {
+#acnbc, #anb, #acnb, #anbc {
   width: 400px;
   height: 200px;
-  border: 1px solid black;
-  position: absolute;
-  top:330px;
+  position: relative;
+  top: -299px;
 }
+
+#acnbc {
+  left: 0;
+}
+
+#anb{
+  left: -400px;
+}
+
+#acnb {
+  left: -800px;
+}
+
+#anbc {
+  left: -1210px;
+}
+
 
 #circleA {
   width: 150px;
@@ -209,20 +225,21 @@ li.navbarli, .navbara {
 
 }
 
+/*
 #AnB{
   width:72px;
   height:90px;
   border-top:px solid black;
   border-left:0px solid black;
-  
   position: relative;
   inset: -244px 165px;
   border-radius:0px 0px 0px 0px;
   transform: rotate(-0deg);
   background-color: rgb(200, 255, 0);
   clip-path: ellipse(22% 52%);
-  z-index: ;
+  z-index: 1;
 }
+*/
 
 #title {
   text-align: center;
@@ -241,11 +258,10 @@ li.navbarli, .navbara {
 
 #form1 {
   margin: auto;
-  width: 410px;
 }
 
 .well {
-  width: 450px;
+  width: 600px;
   background-color: rgb(194, 194, 194);
   border-radius: 3%;
   padding: 10px 20px;
@@ -263,7 +279,14 @@ li.navbarli, .navbara {
   color: rgb(129, 129, 129);
 }*/
 
-button:hover {
+.selectBtn{
+  background-color: rgb(180, 234, 252);
+}
+.show {
+  display: block;
+}
+
+#form1Button:hover {
   animation: bounceWithDistortion 2s ease infinite;
 }
 

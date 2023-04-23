@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" type="text/css">
     <!-- link bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cameronsi1996.github.io/personalpage/bootstrap-5.3.0-alpha3-dist/css/bootstrap.css">
     <!-- link font -->
     <script src="https://kit.fontawesome.com/cc04e249b3.js" crossorigin="anonymous"></script>
     <link rel="icon" href="webpageIconMini.png">
@@ -56,46 +55,86 @@
         <p id="titleP">blah blah blahhhhhhhhhhhhhh</p>
       </div>
 
-      <div>
+      
         <div id="vennD">
           <div id="circleA"><span style="position: absolute; inset: 60px 60px; z-index: 10">A</span></div>
           <div id="circleB"><span style="position: absolute; inset: 60px 75px; z-index: 10">B</span></div>
-          <div id="AnB"></div>
-          <div id="A'nB'">
-            <img src="./figures/acnbcBackground.png" style="width: 400px;
-            height: 200px;">
+          <!--<div id="AnB"></div>-->
+          <div style="display: inline-flex; flex-direction: row; flex-wrap: nowrap">
+            <div><img id="acnbc" src="" style="visibility: hidden;"></div>
+            <!--<div><img id="acnbc" src="./figures/acnbcBackground.png"></div>-->
+            <div><img id="anb" src="" style="visibility: hidden;"></div>
+            <!--<div><img id="anb" src="./figures/anb.png"></div>-->
+            <div><img id="acnb" src="" style="visibility: hidden;"></div>
+            <!--<div><img id="acnb" src="./figures/acnb.png"></div>-->>
+            <div><img id="anbc" src="" style="visibility: hidden;"></div>
+            <!--<div><img id="anbc" src="./figures/anbc.png"></div>-->
           </div>
         </div>
-      </div>
-
+      
       <div class="center">
         <form id="form1">
           <div class="well">   
-            <label class="mediumFonts">Please enter (in numbers only):</label>
+            <label class="mediumFonts">Please enter and choose parameters:</label>
+            <br><br>
             <div class="row">
               <div class="col-md-12">
-                <input id="cost" class="form-control input-sm" type="number" placeholder="Bottle Price ($)"> 
+                
+                <div name="variable1" id="variable1" class="selectBtn" style="display: inline; border: 1px solid rgb(97, 97, 97); margin-right: 10px;">P(A) probability of event A: </div>
+                <input id="pA" type="number" max="1" min = "0" step="0.1" style="width: 120px;" placeholder="Enter decimal">
+                
+                <br><br>
+              
+                <div name="variable1" id="variable1" class="selectBtn" style="display: inline; border: 1px solid rgb(97, 97, 97); margin-right: 10px;">P(B) probability of event B: </div>
+                <input id="pB" type="number" max="1" min = "0" step="0.1" style="width: 120px;" placeholder="Enter decimal">
               </div>
             </div>
+            <br>
+
             <div class="row">
               <div class="col-md-12">
-                <input id="alcoholPercentage" class="form-control input-sm" type="number" placeholder="Alchol Percentage in %"> 
+                <select name="conditionalPGiven" id="conditionalPGiven" class="selectBtn">
+                  <option value="AgB">P(A|B) probability of event B, given event A occurred</option>
+                  <option value="BgA">P(B|A) probability of event A, given event B occurred</option>
+                  <input id="cPG" type="number" max="1" min = "0" step="0.1" style="display: block; width: 398px" placeholder="Enter decimal">
+                </select>
               </div>
             </div>
+            <br>
+            
             <div class="row">
               <div class="col-md-12">
-                <input id="vol" class="form-control input-sm" type="number" placeholder="Bottle Volume in milliliters (ml)">
+                <select name="pAnd" id="pAnd" class="selectBtn">
+                  <option value="AnB">P(A∩B) probability of event B AND A occurred</option>
+                  <option value="ACnBC">P(A'∩B') probability of event A AND event B did NOT occurr</option>
+                  <input id="and" type="number" max="1" min = "0" step="0.1" style="display: block; width: 448px" placeholder="Enter decimal">
+                </select>
               </div>
             </div>
-            <button id="form1Button" type="button" class="btn btn-info btn-lg" onclick="alcoholPrice()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
+            <br>
+
+            <div class="row">
+              <div class="col-md-12">
+                <select name="pOr" id="pOr" class="selectBtn">
+                  <option value="AuB">P(AUB) probability of event B OR A occurred</option>
+                  <option value="ACuBC">P(A'UB') probability of event A OR event B did NOT occurr</option>
+                  <input id="or" type="number" max="1" min ="0" step="0.1" style="display: block; width: 439px" placeholder="Enter decimal">
+                </select>
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="col-md-12">
+                <input id="vol" class="form-control input-sm" type="number" placeholder="XXXXXXXX">
+              </div>
+            </div>
+            <button id="form1Button" type="button" class="btn btn-info btn-lg" style="color:white" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
           </div>
           <div class="half-empty"></div>
-          <p class="mediumFonts">Price ($) per <b><i>ml</i></b> of alcohol, for comparison <i>(the lower, the cheaper)</i>:</p>
-          <p id="costOfAlcohol"></p>
-          <p class="mediumFonts">Total Price ($) paid for non-alcoholic content</p>
-          <p id="totalcostOfOther"></p>
-          <div id="enjoyBannerDiv">
-            <h2 id="enjoyBanner"></h2>
+          <p class="mediumFonts"><b><i>Results</i></b>:</p>
+          <p id="results"></p>
+          
           </div>
         </form>
       </div>

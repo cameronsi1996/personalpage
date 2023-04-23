@@ -1,3 +1,134 @@
+/*function paramDropdown() {
+    document.getElementById("param1").classList.toggle("show")
+    return
+}*/
+
+function getV(x) {
+    return(document.getElementById(x).value) 
+}
+
+function print(id, message) {
+    return document.getElementById(id).innerHTML = message
+}
+
+function imgFeed(id, link) {
+    return document.getElementById(id).src = link, document.getElementById(id).style = "visibility: visible;"
+}
+
+function calculate() {
+    //variables setup
+    pA = getV("pA");
+    pB = getV("pB");
+
+    console.log("pA " + pA);
+    console.log("pB " + pB);
+
+    AgB = "";
+    BgA = "";
+    conditionalPGiven = getV("conditionalPGiven");
+    if (conditionalPGiven == "AgB") {
+        AgB = getV("cPG");
+
+    } else if (conditionalPGiven == "BgA") {
+        BgA = getV("cPG");
+    }
+    console.log("AgB " + AgB);
+    console.log("BgA " + BgA);
+    
+    AnB = "";
+    ACnBC = "";
+    pAnd = getV("pAnd");
+    if (pAnd == "AnB") {
+        AnB = getV("and");
+    } else if (pAnd == "ACnBC") {
+        ACnBC = getV("and");
+    };
+
+    AuB = "";
+    ACuBC = "";
+    pOr = getV("pOr");
+    if (pOr == "AuB") {
+        AuB = getV("or");
+    } else if (pOr == "ACuBC") {
+        ACuBC = getV("or");
+    };
+
+    console.log("AnB " + AnB);
+    console.log("ACnBC " + ACnBC);
+    console.log("AuB " + AuB);
+    console.log("ACuBC " + ACuBC);
+
+    //Calc
+    if ((AgB != "" || BgA != "") && pA != "" && pB != "" && AnB == "" && ACnBC == "") {
+        if (Number(pA).toFixed(4) == Number(AgB).toFixed(4)) {
+            resultAnB = Number(pA * pB).toFixed(4);
+            resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+            resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+            resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+            return (
+                print(
+                    "results", 
+                    "P(A) and P(B) are <b>independent variables!</b><br>\
+                    P(A∩B) = P(A) * P(B) = " + resultAnB + "<br>\
+                    P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
+                    P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
+                    P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                ),
+                imgFeed("anb", "./figures/anb.png")
+            )
+            } else if (Number(pB).toFixed(4) == Number(BgA).toFixed(4)) {
+                resultAnB = Number(pA * pB).toFixed(4);
+                resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+                resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+                resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                return (
+                    print(
+                        "results", 
+                        "P(A) and P(B) are <b>independent variables!</b><br>\
+                        P(A∩B) = P(A) * P(B) = " + resultAnB + "<br>\
+                        P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
+                        P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
+                        P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                    ),
+                    imgFeed("anb", "./figures/anb.png")
+                )
+            } else if (AgB != "" && (Number(pA*pB).toFixed(4) != Number(AnB).toFixed(4))) {
+                resultAnB = Number(pB * AgB).toFixed(4);
+                resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+                resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+                resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                return (
+                    print(
+                        "results",
+                        "P(A) and P(B) are <b>dependent variables!</b><br>P(A∩B) = P(A|B) * P(B) = " + resultAnB + "<br>\
+                        P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
+                        P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
+                        P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                    ),
+                    imgFeed("anb", "./figures/anb.png")
+                )
+            } else if (BgA != "" && (Number(pA*pB).toFixed(4) != Number(AnB).toFixed(4))) {
+                resultAnB = Number(pA * BgA).toFixed(4);
+                resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+                resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+                resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                return (
+                    print(
+                    "results", 
+                    "P(A) and P(B) are <b>dependent variables!</b><br>P(A∩B) = P(B|A) * P(A) = " + resultAnB + "<br>\
+                    P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
+                    P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
+                    P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                ),
+                    imgFeed("anb", "./figures/anb.png")
+                )
+        }
+    }
+
+    return 0
+}
+
+
 function alcoholPrice() {
 
     function roundToDec(num, dec) {
@@ -30,3 +161,4 @@ function alcoholPrice() {
     )
     }
 }  
+
