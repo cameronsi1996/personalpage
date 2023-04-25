@@ -70,12 +70,14 @@ function calculate() {
         return print(id, "")
     }
 
+    
     if ((AgB != "" || BgA != "") && pA != "" && pB != "" && AnB == "" && ACnBC == "") {
         if (Number(pA).toFixed(4) == Number(AgB).toFixed(4)) {
             let resultAnB = Number(pA * pB).toFixed(4);
             let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
             let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-            let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+            let resultACnBC = (1- Number(resultAnBC) - Number(resultAnB) - Number(resultACnB)).toFixed(4);
+            let resultAuB = (Number(resultACnB) + Number(resultAnB) + Number(resultAnBC)).toFixed(4);
             return (
                 print(
                     "results", 
@@ -83,16 +85,18 @@ function calculate() {
                     P(A∩B) = P(A) * P(B) = " + resultAnB + "<br>\
                     P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
                     P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
-                    P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                    P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC + "<br>\
+                    P(AUB) = P(A∩B) + P(A∩B') + P(A'∩B) = " + resultAuB
                 ),
-                handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),  
+                handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnBC, resultAuB),  
                 imgFeed("anb", "./figures/anb.png")
                 )
             } else if (Number(pB).toFixed(4) == Number(BgA).toFixed(4)) {
                 let resultAnB = Number(pA * pB).toFixed(4);
                 let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
                 let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-                let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                let resultACnBC = (1- Number(resultAnBC) - Number(resultAnB) - Number(resultACnB)).toFixed(4);
+            let resultAuB = (Number(resultACnB) + Number(resultAnB) + Number(resultAnBC)).toFixed(4);
                 return (
                     print(
                         "results", 
@@ -100,41 +104,46 @@ function calculate() {
                         P(A∩B) = P(A) * P(B) = " + resultAnB + "<br>\
                         P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
                         P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
-                        P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                        P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC + "<br>\
+                        P(AUB) = P(A∩B) + P(A∩B') + P(A'∩B) = " + resultAuB
                     ),
-                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),
+                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnBC, resultAuB),
                     imgFeed("anb", "./figures/anb.png")
                 )
             } else if (AgB != "" && (Number(pA*pB).toFixed(4) != Number(AnB).toFixed(4))) {
                 let resultAnB = Number(pB * AgB).toFixed(4);
                 let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
                 let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-                let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                let resultACnBC = (1- Number(resultAnBC) - Number(resultAnB) - Number(resultACnB)).toFixed(4);
+            let resultAuB = (Number(resultACnB) + Number(resultAnB) + Number(resultAnBC)).toFixed(4);
                 return (
                     print(
                         "results",
                         "P(A) and P(B) are <b>dependent variables!</b><br>P(A∩B) = P(A|B) * P(B) = " + resultAnB + "<br>\
                         P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
                         P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
-                        P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                        P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC + "<br>\
+                        P(AUB) = P(A∩B) + P(A∩B') + P(A'∩B) = " + resultAuB
                     ),
-                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),
+                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnBC, resultAuB),
                     imgFeed("anb", "./figures/anb.png")
                 )
             } else if (BgA != "" && (Number(pA*pB).toFixed(4) != Number(AnB).toFixed(4))) {
                 let resultAnB = Number(pA * BgA).toFixed(4);
                 let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
                 let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-                let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                let resultACnBC = (1- Number(resultAnBC) - Number(resultAnB) - Number(resultACnB)).toFixed(4);
+                let resultAuB = (Number(resultACnB) + Number(resultAnB) + Number(resultAnBC)).toFixed(4);
                 return (
                     print(
                     "results", 
                     "P(A) and P(B) are <b>dependent variables!</b><br>P(A∩B) = P(B|A) * P(A) = " + resultAnB + "<br>\
                     P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
                     P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
-                    P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
+                    P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC + "<br>\
+                    P(AUB) = P(A∩B) + P(A∩B') + P(A'∩B) = " + resultAuB
                     ),
-                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),
+                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnBC, resultAuB),
                     imgFeed("anb", "./figures/anb.png")
                 )
             }
