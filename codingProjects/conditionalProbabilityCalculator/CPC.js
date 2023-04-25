@@ -17,14 +17,14 @@ function imgFeed(id, link) {
 
 function calculate() {
     //variables setup
-    pA = getV("pA");
-    pB = getV("pB");
+    let pA = getV("pA");
+    let pB = getV("pB");
 
     console.log("pA " + pA);
     console.log("pB " + pB);
 
-    AgB = "";
-    BgA = "";
+    let AgB = "";
+    let BgA = "";
     conditionalPGiven = getV("conditionalPGiven");
     if (conditionalPGiven == "AgB") {
         AgB = getV("cPG");
@@ -35,18 +35,18 @@ function calculate() {
     console.log("AgB " + AgB);
     console.log("BgA " + BgA);
     
-    AnB = "";
-    ACnBC = "";
-    pAnd = getV("pAnd");
+    let AnB = "";
+    let ACnBC = "";
+    let pAnd = getV("pAnd");
     if (pAnd == "AnB") {
         AnB = getV("and");
     } else if (pAnd == "ACnBC") {
         ACnBC = getV("and");
     };
 
-    AuB = "";
-    ACuBC = "";
-    pOr = getV("pOr");
+    let AuB = "";
+    let ACuBC = "";
+    let pOr = getV("pOr");
     if (pOr == "AuB") {
         AuB = getV("or");
     } else if (pOr == "ACuBC") {
@@ -59,12 +59,23 @@ function calculate() {
     console.log("ACuBC " + ACuBC);
 
     //Calc
+    function handlingNegativeP(id, ) {
+        let message = "Found probability that is > 1 or < 0, i.e. very likely to be erroneous.";
+        for (let i = 1; i < arguments.length; i++) {
+            console.log(arguments[i]);
+            if (arguments[i] < 0 || arguments[i] > 1) {
+                return print(id, message);
+            }
+        } 
+        return print(id, "")
+    }
+
     if ((AgB != "" || BgA != "") && pA != "" && pB != "" && AnB == "" && ACnBC == "") {
         if (Number(pA).toFixed(4) == Number(AgB).toFixed(4)) {
-            resultAnB = Number(pA * pB).toFixed(4);
-            resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
-            resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-            resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+            let resultAnB = Number(pA * pB).toFixed(4);
+            let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+            let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+            let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
             return (
                 print(
                     "results", 
@@ -74,13 +85,14 @@ function calculate() {
                     P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
                     P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
                 ),
+                handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),  
                 imgFeed("anb", "./figures/anb.png")
-            )
+                )
             } else if (Number(pB).toFixed(4) == Number(BgA).toFixed(4)) {
-                resultAnB = Number(pA * pB).toFixed(4);
-                resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
-                resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-                resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                let resultAnB = Number(pA * pB).toFixed(4);
+                let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+                let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+                let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
                 return (
                     print(
                         "results", 
@@ -90,13 +102,14 @@ function calculate() {
                         P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
                         P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
                     ),
+                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),
                     imgFeed("anb", "./figures/anb.png")
                 )
             } else if (AgB != "" && (Number(pA*pB).toFixed(4) != Number(AnB).toFixed(4))) {
-                resultAnB = Number(pB * AgB).toFixed(4);
-                resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
-                resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-                resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                let resultAnB = Number(pB * AgB).toFixed(4);
+                let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+                let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+                let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
                 return (
                     print(
                         "results",
@@ -105,13 +118,14 @@ function calculate() {
                         P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
                         P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
                     ),
+                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),
                     imgFeed("anb", "./figures/anb.png")
                 )
             } else if (BgA != "" && (Number(pA*pB).toFixed(4) != Number(AnB).toFixed(4))) {
-                resultAnB = Number(pA * BgA).toFixed(4);
-                resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
-                resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
-                resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
+                let resultAnB = Number(pA * BgA).toFixed(4);
+                let resultAnBC = (Number(pA) - Number(resultAnB)).toFixed(4);
+                let resultACnB = (Number(pB) - Number(resultAnB)).toFixed(4);
+                let resultACnBC = (1- resultAnBC - resultAnB - resultACnB).toFixed(4);
                 return (
                     print(
                     "results", 
@@ -119,14 +133,16 @@ function calculate() {
                     P(A∩B') = P(A) - P(A∩B) = " +  resultAnBC + "<br>\
                     P(A'∩B) = P(B) - P(A∩B) = " + resultACnB + "<br>\
                     P(A'UB') = 1 - P(A∩B') - P(A∩B) - P(A'∩B) = " + resultACnBC
-                ),
+                    ),
+                    handlingNegativeP("probabilityErrorMessage", resultAnB, resultAnBC, resultACnB, resultACnB),
                     imgFeed("anb", "./figures/anb.png")
                 )
-        }
+            }
     }
-
     return 0
 }
+
+
 
 
 function alcoholPrice() {

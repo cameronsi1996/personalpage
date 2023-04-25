@@ -308,6 +308,13 @@ li.navbarli, .navbara {
   font-weight: bold;
 }
 
+.appendix {
+  width: 100%; 
+  padding-top: 80px;
+  display: flex;
+  justify-content: center
+}
+
 .redFont {
   color: red;
 }
