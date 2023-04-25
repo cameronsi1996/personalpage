@@ -52,7 +52,7 @@
       <div>
         <h1 id="title">Conditional Probability Calculations</h1>
         
-        <p id="titleP">blah blah blahhhhhhhhhhhhhh</p>
+        <p id="titleP" style="display: flex; justify-content: center;">Calculating for Two Events A, B</p>
       </div>
 
       
@@ -107,7 +107,7 @@
                 <select name="pAnd" id="pAnd" class="selectBtn">
                   <option value="AnB">P(A∩B) probability of event B AND A occurred</option>
                   <option value="ACnBC">P(A'∩B') probability of event A AND event B did NOT occurr</option>
-                  <input id="and" type="number" max="1" min = "0" step="0.1" style="display: block; width: 448px" placeholder="Enter decimal">
+                  <input id="and" type="number" max="1" min = "0" step="0.1" style="display: block; width: 448px" placeholder="Enter decimal (Works in progess, Not Available atm)">
                 </select>
               </div>
             </div>
@@ -118,17 +118,19 @@
                 <select name="pOr" id="pOr" class="selectBtn">
                   <option value="AuB">P(AUB) probability of event B OR A occurred</option>
                   <option value="ACuBC">P(A'UB') probability of event A OR event B did NOT occurr</option>
-                  <input id="or" type="number" max="1" min ="0" step="0.1" style="display: block; width: 439px" placeholder="Enter decimal">
+                  <input id="or" type="number" max="1" min ="0" step="0.1" style="display: block; width: 439px" placeholder="Enter decimal (Works in progess, Not Available atm)">
                 </select>
               </div>
             </div>
             <br>
 
+            <!--
             <div class="row">
               <div class="col-md-12">
                 <input id="vol" class="form-control input-sm" type="number" placeholder="XXXXXXXX">
               </div>
             </div>
+            -->
             <button id="form1Button" type="button" class="btn btn-info btn-lg" style="color:white" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
           </div>
           <div class="half-empty"></div>
@@ -136,6 +138,7 @@
           <p id="results"></p>
           <p id="probabilityErrorMessage" class = redFont></p>
           </div>
+          
         </form>
         
       </div>
