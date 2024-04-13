@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cameron Si cameronsi1996 Maths Workout</title>
+    <meta charset="UTF-8">
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name='description' content='Maths Workout Game'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!-- link bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- link font -->
+    <script src="https://kit.fontawesome.com/cc04e249b3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="webpageIconMini.png">
+    <!-- link jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("button").addClass("bouncy")});
+    </script>
+    <script type="text/javascript" src="mQ.js"></script>
+  </head>
+  
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/">Home</a></li>
+        <li class="navbarli"><a class="navbara" href="https://cameronsi1996.github.io/personalpage/#projects">VideoFlexShow</a></li>
+        <li class="navbarli"><a class="navbara" href="#contact">Contact</a></li>
+        <li class="navbarli"><a class="navbara" href="#ferris-wheel"><i>Top</i></a></li>
+      </ul>
+    </nav>
+
+    <div class="empty"></div>
+
+    <section id="ferris-wheel">
+      <div class="ferris-wheel">
+        <div class="wheelandcabin">
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="wheel-line"></div>
+          <div class="cabin c1"></div>
+          <div class="cabin c2"></div>
+          <div class="cabin c3"></div>
+          <div class="cabin c4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="body">
+      <div>
+        <h1 id="title">Math Workout</h1>
+        <p id="titleP"></p> 
+        <p></p>
+      </div>
+
+      <div class="center">
+        <div id="form1">
+          <div class="well">   
+            <label id="question" class="col-form-label-lg"></label>
+            <div class="row">
+              <div class="col-md-12">
+                <p></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <input id="answer" class="form-control input-sm" type="number"> 
+              </div>
+            </div>
+            <div class="col-md-12">
+              <p></p>
+            </div>
+            <div id="form1ButtonDiv" class="center">
+              <button id="form1Button" type="button" class="btn btn-info btn-lg" onclick="calculate()"><i class="fa-solid fa-calculator"></i>  Calculate</button>
+            </div>  
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <div class="half-empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    
+    
+    <div>
+    <button type="button" id="backtotop"><a href="#ferris-wheel">Back to Top</a></button>
+    </div>
+  
+    <footer id="contact">
+      <ul class="footerul">
+        <li class="footerli"></li>
+        <li class="footerli"><i class="fa-solid fa-link"></i> Profile: <a class="footera" href="https://www.linkedin.com/in/cameronsi/">https://www.linkedin.com/in/cameronsi/</a></li>
+        <li class="footerli">Apr 2024</li> 
+      </ul>
+    </footer>
+  </body>
+</html>
+
+<script>
+  document.getElementById("form1").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("form1Button").click();
+      }
+    });
+</script>

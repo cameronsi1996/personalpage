@@ -1,0 +1,16 @@
+Can probability of A and B be greater than probability of A in dependent conditional probability?
+
+ChatGPT
+Yes, it is possible for the probability of both events A and B to be greater than the probability of A alone, in dependent conditional probability.
+
+In probability theory, the probability of event A given that event B has occurred is denoted as P(A|B), and it is defined as the probability of the intersection of A and B divided by the probability of B, i.e., P(A|B) = P(A ∩ B) / P(B).
+
+If events A and B are dependent, then the probability of their intersection P(A ∩ B) can be greater than the probability of A alone, P(A). This is because the probability of A alone takes into account all possible outcomes where A occurs, whereas the probability of A given B only takes into account the outcomes where B has already occurred. Therefore, it is possible for the probability of A and B to be greater than the probability of A alone, in dependent conditional probability.
+
+For example, let's say that we are flipping two coins. The probability of getting heads on the first coin flip is 0.5 (P(A)), and the probability of getting heads on the second coin flip is also 0.5 (P(B)). However, if we know that the first coin flip resulted in heads (B has occurred), then the probability of getting heads on the second coin flip is now 1 (P(A|B) = P(A ∩ B) / P(B) = 0.5 / 0.5 = 1), which is greater than the probability 
+
+
+
+
+Previous Query
+But if it they are independent variables where A and B = A * B, then it's impossible for A and B to be greater than either A or B, or else it would fall under the "Conjunction Fallacy"
