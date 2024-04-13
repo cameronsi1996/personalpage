@@ -13,7 +13,7 @@ function multiply() {
 
 function sum() {
     num1 = randRange(1001, 99999);
-    num2 = randRange(1001, 99999);
+    num2 = randRange(101, 99999);
     ans = num1 + num2;
     result = {type: 'sum', num1: num1, num2: num2, ans: ans, equation: String(num1) + ' &#43; ' + String(num2) + ' &#61; '};
     return (result);
@@ -27,7 +27,7 @@ function deduct() {
     nums.push(num2);
     nums.sort((a, b) => a - b);
     ans = nums[1] - nums[0];
-    result = {type: 'deduct', num1: nums[1], num2: nums[0], ans: ans, equation: String(num1) + ' &#8722; ' + String(num2) + ' &#61; '};
+    result = {type: 'deduct', num1: nums[1], num2: nums[0], ans: ans, equation: String(nums[1]) + ' &#8722; ' + String(nums[0]) + ' &#61; '};
     return (result);
 };
 
