@@ -221,6 +221,7 @@ li.navbarli, .navbara {
 }
 
 .section-div {
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
